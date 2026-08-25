@@ -1,4 +1,4 @@
-const CACHE_NAME = "edu-episians-static-v1";
+const CACHE_NAME = "edu-episians-static-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,10 +6,10 @@ const APP_SHELL = [
   "./app.js",
   "./offline.html",
   "./manifest.webmanifest",
-  "./favicon.svg",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png",
-  "./icons/apple-touch-icon.png"
+  "./favicon.svg?v=2",
+  "./icons/icon-192.png?v=2",
+  "./icons/icon-512.png?v=2",
+  "./icons/apple-touch-icon.png?v=2"
 ];
 
 self.addEventListener("install", (event) => {
