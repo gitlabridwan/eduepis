@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1f3a" />
+    <meta name="description" content="Ruang belajar digital Edu Episians yang dapat dipasang sebagai aplikasi." />
+    <meta name="application-name" content="Edu Episians" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Edu Episians" />
+
+    <meta property="og:title" content="Edu Episians" />
+    <meta property="og:description" content="Belajar lebih fokus, di mana saja." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="og.png" />
+
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Edu Episians</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <a class="skip-link" href="#edu-episians-frame">Langsung ke aplikasi</a>
+
+      <iframe
+        id="edu-episians-frame"
+        class="app-frame"
+        src="https://script.google.com/macros/s/AKfycbxzYbYcTA2gvmMsdWg0nKtdfY4_rqeZz2N2fo3AzuD9cSIa-18ma3_Bk5sWk2tfosKqXg/exec"
+        title="Edu Episians"
+        allow="fullscreen; clipboard-read; clipboard-write"
+        loading="eager"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <div class="launch-screen" id="launch-screen">
+        <div class="brand-mark" aria-hidden="true">EE</div>
+        <h1>Edu Episians</h1>
+        <p>Mempersiapkan ruang belajar Anda</p>
+        <span class="loader" aria-hidden="true"></span>
+      </div>
+
+      <section class="status-card" id="status-card" role="status" aria-live="polite" hidden>
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <strong id="status-title">Anda sedang luring</strong>
+          <p id="status-copy">Konten pembelajaran memerlukan koneksi internet.</p>
+        </div>
+        <button id="reload-button" type="button">Muat ulang</button>
+      </section>
+
+      <button class="install-button" id="install-button" type="button" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"></path>
+        </svg>
+        Pasang aplikasi
+      </button>
+
+      <noscript>
+        <div class="noscript-message">JavaScript perlu diaktifkan untuk membuka Edu Episians.</div>
+      </noscript>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

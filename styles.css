@@ -1,0 +1,222 @@
+:root {
+  --navy: #0b1f3a;
+  --blue: #2563eb;
+  --amber: #f5a524;
+  --white: #ffffff;
+  --muted: #64748b;
+  --border: rgba(148, 163, 184, 0.35);
+  --shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: var(--white);
+}
+
+body {
+  color: var(--navy);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a { font: inherit; }
+
+[hidden] { display: none !important; }
+
+.app-shell {
+  position: fixed;
+  inset: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--white);
+}
+
+.app-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--white);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 50;
+  top: max(12px, env(safe-area-inset-top));
+  left: 12px;
+  padding: 10px 14px;
+  color: var(--white);
+  background: var(--navy);
+  border-radius: 10px;
+  transform: translateY(-180%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.launch-screen {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 35%, rgba(37, 99, 235, 0.12), transparent 38%), linear-gradient(180deg, #f8fbff 0%, var(--white) 72%);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 240ms ease, visibility 240ms ease;
+}
+
+.launch-screen--hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.brand-mark {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 8px;
+  place-items: center;
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  border-radius: 23px;
+  background: linear-gradient(145deg, var(--blue), var(--navy));
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.24);
+}
+
+.launch-screen h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.launch-screen p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.loader {
+  width: 28px;
+  height: 28px;
+  margin-top: 18px;
+  border: 3px solid #dbeafe;
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 760ms linear infinite;
+}
+
+.status-card {
+  position: fixed;
+  z-index: 40;
+  top: max(14px, env(safe-area-inset-top));
+  left: 50%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: min(560px, calc(100% - 28px));
+  padding: 12px 12px 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 0 5px rgba(239, 68, 68, 0.12);
+}
+
+.status-card strong { display: block; font-size: 0.9rem; }
+.status-card p { margin: 2px 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
+
+.status-card button,
+.install-button { border: 0; cursor: pointer; }
+
+.status-card button {
+  padding: 9px 12px;
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: 10px;
+  background: var(--blue);
+}
+
+.status-card button:disabled { cursor: not-allowed; opacity: 0.48; }
+
+.install-button {
+  position: fixed;
+  z-index: 30;
+  right: 16px;
+  bottom: max(16px, calc(env(safe-area-inset-bottom) + 10px));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  color: var(--white);
+  font-size: 0.86rem;
+  font-weight: 750;
+  border-radius: 999px;
+  background: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+.install-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.install-button:focus-visible,
+.status-card button:focus-visible { outline: 3px solid rgba(245, 165, 36, 0.75); outline-offset: 3px; }
+
+.noscript-message {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--navy);
+  text-align: center;
+  background: var(--white);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 520px) {
+  .status-card { grid-template-columns: auto minmax(0, 1fr); }
+  .status-card button { grid-column: 2; justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@supports not (height: 100dvh) {
+  .app-shell { min-height: 100vh; }
+}
