@@ -3,86 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#123e36" />
-    <meta name="description" content="Portal OSIS untuk informasi kegiatan, pengurus, berita, dan aspirasi siswa." />
-    <meta name="application-name" content="OSIS" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0b1f3a" />
+    <meta name="description" content="Ruang belajar digital Edu Episians yang dapat dipasang sebagai aplikasi." />
+    <meta name="application-name" content="Edu Episians" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="OSIS" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="apple-mobile-web-app-title" content="Edu Episians" />
 
-    <meta property="og:title" content="OSIS | Satu Ruang Bersama" />
-    <meta property="og:description" content="Kegiatan, kabar, dan aspirasi siswa dalam satu ruang bersama." />
+    <meta property="og:title" content="Edu Episians" />
+    <meta property="og:description" content="Belajar lebih fokus, di mana saja." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="og.png" />
 
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=2" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=2" />
     <link rel="stylesheet" href="styles.css" />
 
-    <title>OSIS | Satu Ruang Bersama</title>
-    <script src="app.js" defer></script>
+    <title>Edu Episians</title>
   </head>
   <body>
     <main class="app-shell">
-      <a class="skip-link" id="skip-link" href="#osis-frame">Langsung ke aplikasi</a>
+      <a class="skip-link" href="#edu-episians-frame">Langsung ke aplikasi</a>
 
-      <!-- app.js memasang src setelah pendengar load siap. -->
       <iframe
-        id="osis-frame"
+        id="edu-episians-frame"
         class="app-frame"
-        data-app-url="https://script.google.com/macros/s/AKfycbx1oygC9DRjo1RzBnehxpebva12fHvt_cGVKHvu11NDLQO069bnkN3kLXx5myvMFf4U/exec"
-        title="Website OSIS"
+        src="https://script.google.com/macros/s/AKfycbyqCouzQtCX1P1zbt9cVhy_6J7V83XUBG0C4ilAICrbczh56rvFflsl7D2sU0ioXwkgCw/exec"
+        title="Edu Episians"
         allow="fullscreen; clipboard-read; clipboard-write"
         loading="eager"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        tabindex="0"
       ></iframe>
 
-      <section class="launch-screen" id="launch-screen" role="status" aria-live="polite">
-        <img class="brand-icon" src="favicon.svg" width="76" height="76" alt="" />
-        <div class="brand-mark" aria-hidden="true">OSIS</div>
-        <h1>Satu Ruang Bersama</h1>
-        <p>Mempersiapkan ruang bersama Anda</p>
+      <div class="launch-screen" id="launch-screen">
+        <div class="brand-mark" aria-hidden="true">EPISIAN's</div>
+        <h1>Edu Episians</h1>
+        <p>Mempersiapkan ruang belajar Anda</p>
         <span class="loader" aria-hidden="true"></span>
-      </section>
-
-      <a
-        class="direct-link"
-        id="direct-link"
-        href="https://script.google.com/macros/s/AKfycbxKRY-9NiCG-eslWXt519gpSE2tHkXYftcgsv_qi3H2lTrMU6kncHm8UaOIfAFv57G4/exec"
-        target="_top"
-      >Buka langsung <span aria-hidden="true">↗</span></a>
-
-      <div class="app-overlays">
-        <section class="status-card" id="status-card" role="status" aria-live="polite" hidden>
-          <span class="status-dot" aria-hidden="true"></span>
-          <div class="status-text">
-            <strong id="status-title">Anda sedang luring</strong>
-            <p id="status-copy">Konten OSIS memerlukan koneksi internet.</p>
-          </div>
-          <button id="reload-button" type="button">Muat ulang</button>
-        </section>
-
-        <button class="install-button" id="install-button" type="button" hidden>
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"></path>
-          </svg>
-          Pasang aplikasi
-        </button>
       </div>
 
+      <section class="status-card" id="status-card" role="status" aria-live="polite" hidden>
+        <span class="status-dot" aria-hidden="true"></span>
+        <div>
+          <strong id="status-title">Anda sedang luring</strong>
+          <p id="status-copy">Konten pembelajaran memerlukan koneksi internet.</p>
+        </div>
+        <button id="reload-button" type="button">Muat ulang</button>
+      </section>
+
+      <button class="install-button" id="install-button" type="button" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"></path>
+        </svg>
+        Pasang aplikasi
+      </button>
+
       <noscript>
-        <style>.launch-screen { display: none; }</style>
-        <section class="noscript-message">
-          <h1>Website OSIS</h1>
-          <p>Aktifkan JavaScript atau pilih “Buka langsung” untuk melanjutkan.</p>
-        </section>
+        <div class="noscript-message">JavaScript perlu diaktifkan untuk membuka Edu Episians.</div>
       </noscript>
     </main>
+
+    <script src="app.js" defer></script>
   </body>
 </html>
